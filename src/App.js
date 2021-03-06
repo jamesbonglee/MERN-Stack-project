@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
+
+import HomeBoardPage from "./components/pages/HomeBoard/HomeBoard";
+import LoginPage from "./components/pages/Login/LoginPage";
+import RegisterPage from "./components/pages/Register/RegisterPage";
+import PageNotFound from "./components/pages/NotFound/NotFound";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+   return (
+      <BrowserRouter>
+         <div className="container">
+            <h2>MERN-STACK hello</h2>
+         </div>
+         <Route exact path="/" component={HomeBoardPage} />
+         <Route exact path="/login" component={LoginPage} />
+         <Route exact path="/register" component={RegisterPage} />
+         {/* <Route exact component={PageNotFound} /> */}
+      </BrowserRouter>
+   );
 }
 
 export default App;
